@@ -32,6 +32,7 @@ const routes = [
   {
     path: "/profile",
     component: Profile,
+    beforeEnter: authGuard,
   },
   {
     path: "/movies/:movieId", // route param

@@ -18,12 +18,15 @@ export async function apiUserLoginRegister(action = "login", username, password)
     const {
       success,
       data,
-      error = "Some error wile logging in",
+      error = "Some error while logging in",
     } = await response.json();
+
     if (!success) {
       throw new Error(error);
     }
+
     return [null, data];
+    
   } catch (error) {
     return [error.message, null];
   }
